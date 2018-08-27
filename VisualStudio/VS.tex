@@ -1,0 +1,167 @@
+\documentclass[UTF8,a4paper,12pt]{ctexbook} 
+
+\usepackage{graphicx}%学习插入图
+\usepackage{verbatim}%学习注释多行
+\usepackage{booktabs}%表格
+\usepackage{geometry}%图片
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}%代码
+\usepackage{xcolor}  %颜色
+\usepackage{enumitem}%列表格式
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\usepackage{tcolorbox}
+\usepackage{algorithm}  %format of the algorithm
+\usepackage{algorithmic}%format of the algorithm
+\usepackage{multirow}   %multirow for format of table
+\usepackage{tabularx} 	%表格排版格式控制
+\usepackage{array}	%表格排版格式控制
+\usepackage{hyperref} %超链接 \url{URL}
+\usepackage{tikz}
+\usepackage{dirtree}
+
+
+\usetikzlibrary{intersections,
+	positioning,
+	petri,
+	backgrounds,
+	fit,
+	decorations.pathmorphing,
+	arrows,
+	arrows.meta,
+	bending,
+	calc,
+	intersections,
+	through,
+	backgrounds,
+	shapes.geometric,
+	quotes,
+	matrix,
+	trees,
+	shapes.symbols,
+	graphs,
+	math,
+	patterns,
+	external}
+\CTEXsetup[format+={\flushleft}]{section}
+
+%%%% 设置图片目录
+\graphicspath{{figure/}}
+
+%%%% 段落首行缩进两个字 %%%%
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+\setlength{\parindent}{2em}  %中文缩进两个汉字位
+
+%%%% 下面的命令重定义页面边距，使其符合中文刊物习惯 %%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{0.63cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{14.66cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+
+%%%% 下面的命令设置行间距与段落间距 %%%%
+\linespread{1.4}
+\setlength{\parskip}{0.5\baselineskip}
+\geometry{left=1.6cm,right=1.8cm,top=2cm,bottom=1.7cm} %设置文章宽度
+\pagestyle{plain} 		  %设置页面布局
+
+%代码效果定义
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize\ttfamily,      % size of fonts used for the code
+	%stringstyle=\color{codepurple},
+	%basicstyle=\footnotesize,
+	%breakatwhitespace=false,         
+	%breaklines=true,                 
+	%captionpos=b,                    
+	%keepspaces=true,                 
+	%numbers=left,                    
+	%numbersep=5pt,                  
+	%showspaces=false,                
+	%showstringspaces=false,
+	%showtabs=false,        
+	columns=fullflexible,
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	tabsize=4,
+	commentstyle=\color{mygreen},    % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{mymauve}\ttfamily,     % string literal style
+	frame=single,
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	% identifierstyle=\color{red},
+	language=c++,
+}
+ \author{\kaishu 郑华}
+ \title{\heiti 算法题库笔记}
+ 
+\begin{document}          %正文排版开始
+ 	\maketitle
+\chapter{设置}
+
+\chapter{快捷键}
+	\section{调试快捷键}
+		\begin{itemize}
+			\item \verb|F5 |启动调试
+			\item \verb|Shift+F5 |停止调试
+			\item \verb|Ctrl+Shift+F9 |删除全部断点
+			\item \verb|F10 |逐过程
+			\item \verb|F11 |逐语句
+		\end{itemize}
+	
+	\section{编辑快捷键}
+		\begin{itemize}
+			\item \verb|Shift + Alt + Enter |切换为全屏显示
+			\item \verb|F12 |转到调用过程、变量的定义
+			\item \verb|Shift + f12 |查找所有引用
+			\item \verb|Ctrl + Shift + L |删除当前行
+			\item \verb|Ctrl + G |转到指定行
+		\end{itemize}
+	
+	\section{代码快捷键}
+		\begin{itemize}
+			\item \verb|Ctrl + k d |格式化代码
+			\item \verb|Ctrl + e f |格式化选中代码
+			\item \verb|Ctrl + k c |注释选定内容
+			\item \verb|Ctrl + k u |取消选定内容注释
+			\item \verb|Ctrl + j |智能提示
+			\item \verb|Ctrl + k p |列出参数信息
+			\item \verb|Ctrl + k l |列出成员
+			\item \verb|Ctrl + m |折叠或展开当前方法
+			\item \verb|Ctrl + m o|折叠所有方法
+			\item \verb|Ctrl + m l|展开所有方法
+		\end{itemize}
+	
+	\section{查找快捷键}
+		\begin{itemize}
+			\item \verb|Ctrl+F |查找
+			\item \verb|F3 |查找下一个
+			\item \verb|Shift + F3 |查找上一个
+			\item \verb|Ctrl + H |替换
+		\end{itemize}
+	
+	\section{项目快捷键}
+		\begin{itemize}
+			\item \verb|Ctrl + Shift + C |显示类视图窗口
+			\item \verb|Ctrl + Shift + S |全部保存
+		\end{itemize}
+	
+	\section{窗口快捷键}  
+		\begin{itemize}
+			\item \verb|Ctrl + W C |类视图
+			\item \verb|Ctrl + W E |错误列表
+			\item \verb|Ctrl + W O |输出窗口
+			\item \verb|Ctrl + W P |属性窗口
+			\item \verb|Ctrl + D B |断点窗口
+		\end{itemize}	    
+\end{document} 
+ 		    

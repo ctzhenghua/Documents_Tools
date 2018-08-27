@@ -1,0 +1,157 @@
+\documentclass[UTF8,a4paper,8pt]{ctexart} 
+
+ \usepackage{graphicx}%学习插入图
+ \usepackage{verbatim}%学习注释多行
+ \usepackage{booktabs}%表格
+ \usepackage{geometry}%图片
+ \usepackage{amsmath} 
+ \usepackage{amssymb}
+ \usepackage{listings}%代码
+ \usepackage{xcolor}  %颜色
+ \usepackage{enumitem}%列表格式
+ \usepackage{hyperref}
+ \CTEXsetup[format+={\flushleft}]{section}
+ \newtheorem{thm}{定理}
+
+\geometry{left=1.6cm,right=1.8cm,top=2cm,bottom=1.7cm} %设置文章宽度
+
+\pagestyle{plain} 		  %设置页面布局
+\author{郑华}
+\title{Latex 学习笔记}
+ %代码效果定义
+ \definecolor{codegreen}{rgb}{0,0.6,0}
+ \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+ \definecolor{codepurple}{rgb}{0.58,0,0.82}
+ \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+ \lstdefinestyle{mystyle}{
+ 	backgroundcolor=\color{backcolour},   
+ 	commentstyle=\color{codegreen},
+ 	keywordstyle=\color{magenta},
+ 	numberstyle=\tiny\color{codegray},
+ 	stringstyle=\color{codepurple},
+ 	basicstyle=\footnotesize,
+ 	breakatwhitespace=false,         
+ 	breaklines=true,                 
+ 	captionpos=b,                    
+ 	keepspaces=true,                 
+ 	%numbers=left,                    
+ 	%numbersep=5pt,                  
+ 	showspaces=false,                
+ 	showstringspaces=false,
+ 	showtabs=false,                  
+ 	tabsize=2
+ }
+\lstset{style=mystyle, escapeinside=``}
+
+
+%learn newcommand
+\newcommand \loves[2]{#1 love #2}
+
+\newcommand \love[3][默认第一个参数]{#2 #1 #3}
+\begin{document}          %正文排版开始
+ 	\maketitle
+ 
+\section{排版命令的参数}
+	\verb|\排版命令[可选参数]{其他参数}|
+  
+	  \begin{itemize}
+	  	\item 方括号中的参数为可选
+	  	\item 花括号中的其他参数是不可省略的参数
+	  	\item 命令也可以不带参数
+	  \end{itemize}
+\section{对齐环境}
+	 \verb|\begin{flushleft}//flushrihgt,center...// \排版命令[可选参数]{其他参数}\end{}|
+	    \begin{itemize}
+	    	\item 默认两侧对齐
+	    	\item flushleft
+	    	\item flushright
+	    	\item center
+	    \end{itemize}
+
+\section{字体}
+		\begin{itemize}
+			\item \kaishu \verb|\kaishu|
+			\item \zihao{-3} \verb|\zihao|
+		\end{itemize}
+		
+\section{绘制图片}
+	    \begin{itemize}
+	    	\item \verb|\usepackage{tikz}|
+	    	\item \verb|\begin{tikzpicture}|
+	    	\item \verb|\node[box] (标识名) at(0,0) {文字}:话带字方框|
+	    	\item \verb|\draw[->] (标识名1) -- node[above]{字} (标识名2);从标识名1 画 箭头 到 标识名2.|
+	    \end{itemize}
+	    
+\section{自定义环境}
+		\begin{itemize}
+			\item  \verb|\newtheorem{thm}{定理}|
+			\item  \verb|\begin{\thm}[勾股定理]|
+			\item  	\begin{thm}[勾股定理]
+				$A_2$
+			\end{thm}	
+		\end{itemize}
+\section{大纲}：文档设计工作主要在导言区通过引入宏包、定义命令和设置参数来完成。
+		\begin{itemize}
+			\item 引入宏包：如\verb|sepackage[nottoc]{tocbibind}|
+			\item 标题作者：
+			\item 新建环境：如\verb|\newenvironment{myquote}{\begin{quote} \kaishu \zihao{-5} } {\end{quote}}|
+			
+			\item 新建命令：如\verb|\newcommand \degree{\circ}|
+				\begin{lstlisting}
+	\newcommand <命令> [<参数个数>][<首参默认值>]{<具体定义>}
+	参数个数可以是1到9
+	使用各参数分别使用#1， #2...
+				\end{lstlisting}
+			
+			\verb|\loves{1}{2}| --> \loves{1}{2}
+			
+			\verb|\love{2}{3}| --> \love{2}{3}
+			
+			\verb|\love[第一个参数]{2}{3}| --> \love[第一个参数]{2}{3}
+			
+			\item 新建命令：\url{http://blog.163.com/chen_dawn/blog/static/112506320138762130518/}
+			
+		\end{itemize}                                                               
+		
+\section{抄录命令}
+	  \verb|\verb 符号  内容  符号|
+	   
+\section{让不同的行在指定的地方对齐}
+	   \begin{itemize}
+		   	\item \verb|\\|分隔行与行
+		   	\item  \verb|\=|设置制表位
+		   	\item  \verb|\>|跳到设定好的下一个制表位
+		   	\item  \verb|\‘|使它前后的文字以当前制表位为中心对齐
+		   	\item  \verb|\’|使后面的文字右对齐
+		   	\item  \verb|\<|跳到设定好的上一个制表位
+		   	\item  \verb|\+|后面的行开始都右跳一个制表位
+		   	\item  \verb|\-|后面的行开始都左跳一个制表位
+		   	\item  \verb|\kill|忽略这一行的内容, 只保留制表位的设置。		   			   	
+		   	\item  \verb|\hspace{3em} 类似于 \quad|不过可以指定几个字的距离
+	   \end{itemize}
+ 	
+	 	
+\section{algorithm 环境配置}
+		\begin{itemize}
+			\item  在latex 安装目录查找algorithmic.sty
+			\item  添加自己的命令，或修改原来的命令
+			
+			\item  配置参考：\url{http://blog.sina.com.cn/s/blog\_5a13c966010167fj.html}
+			\item  使用参考：\url{http://www.cnblogs.com/piags/archive/2012/11/06/2757683.html}
+		\end{itemize}	
+
+\section{间距修改}
+		\begin{itemize}
+			\item 页边距之类
+			\item item 上下间距
+			\item 段落标题等
+		\end{itemize}
+		
+		\url{http://blog.sina.com.cn/s/blog_47616e4c01012iol.html}
+		
+	
+\section{样式修改}
+		\url{http://blog.renren.com/share/11982/4080240272}     
+\end{document} 
+ 		    

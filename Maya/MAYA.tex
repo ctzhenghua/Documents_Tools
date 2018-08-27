@@ -1,0 +1,176 @@
+\documentclass[UTF8,a4paper,8pt]{ctexart} 
+
+\usepackage{graphicx}%学习插入图
+\usepackage{verbatim}%学习注释多行
+\usepackage{booktabs}%表格
+\usepackage{geometry}%图片
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{listings}%代码
+\usepackage{xcolor}  %颜色
+\usepackage{enumitem}%列表格式
+\CTEXsetup[format+={\flushleft}]{section}
+
+
+\geometry{textwidth=18cm} %设置文章宽度
+
+\pagestyle{plain} 		  %设置页面布局
+\author{郑华}
+\title{Maya 学习}
+
+
+\begin{document}          %正文排版开始
+	\maketitle
+	\newpage
+	
+\section{Maya 基本操作教程}
+	\paragraph{0.添加聚关灯-观察}
+	\paragraph{1.快捷键制作}
+	\paragraph{2.特殊复制-实体}
+	\paragraph{3.添加纹理-文件}
+	\paragraph{4.旋转缩放物体}
+
+\section{多边形 建模技术}	
+	\paragraph{0.基本元素}
+		\subparagraph{顶点}
+		\subparagraph{边}
+		\subparagraph{面}
+		\subparagraph{UV点}
+		\subparagraph{法线 Normal}
+		
+	\paragraph{1.创建菜单组}
+		\subparagraph{球体等规则图形}
+		\subparagraph{平面}
+		\subparagraph{特殊多边形}：
+		
+		 圆环
+		 
+		 棱柱
+		 
+		 管道
+		 
+		 柏拉图多面体
+	\paragraph{2.网格菜单组}
+		\subparagraph{组合} 可以将选中的多个不同的多边形物体 联合成一个单独的物体，一旦合并后，只能在2个单独的模型中执行编辑
+		
+		 - 点击 选择菜单 -- 选择对象F8
+		 
+		 - shift + 要选的多个物体
+		 
+		 - 网格菜单 -- 组合或ctrl + G
+		\subparagraph{分离}将组合的多个物体 分离为几个相互独立的多边形物体
+		
+		- 点击 要选择的组合对象
+		
+		- 网格菜单  -- 分离
+		\subparagraph{提取}
+		
+		\subparagraph{布尔}
+			组合多边形网格创建新形状，类似与数学中的交集并集差集。
+			
+		\subparagraph{平滑}可以通过增加网格数量来平滑选择的多边形面或物体
+		
+			打开“平滑选项”对话框-分段级别，越高越平滑
+		\subparagraph{平均化顶点}
+		\subparagraph{传递属性}
+		\subparagraph{减少}
+		\subparagraph{三角形化}
+		\subparagraph{四角形化}
+		\subparagraph{填充洞}
+		\subparagraph{生成洞工具}
+		\subparagraph{创建多边形工具}
+		\subparagraph{雕刻几何体工具}
+		\subparagraph{镜像几何体}
+		
+	\paragraph{3.编辑网格菜单组}
+		\subparagraph{保持面的连接性添加边的分段数合并边工具}
+		\subparagraph{挤出滑动边工具删除边/顶点}
+		\subparagraph{桥接变换组件切角顶点}
+		\subparagraph{附加到多边形工具翻转三角形边倒角}
+		\subparagraph{在网格上投影曲线刺破面}
+		\subparagraph{使用投影的曲线分割网格的栔形面}
+		\subparagraph{切割面工具复制面}
+		\subparagraph{交互式分割工具连接组件}
+		\subparagraph{插入循环边工具合并}
+		\subparagraph{偏移循环边工具收拢}
+		
+	\paragraph{4.代理菜单组}
+		\subparagraph{细分曲面代理}
+		\subparagraph{移除细分曲面代理镜像}
+		\subparagraph{折痕工具}
+		\subparagraph{切换代理显示}
+		\subparagraph{代理和细分曲面同时显示}
+	
+	\paragraph{5.法线菜单组}
+		\subparagraph{反向}
+		\subparagraph{软化边/硬化边}
+		\subparagraph{设置法线角度}
+\section{NURBS 建模技术}
+	\paragraph{1.Nurbs 曲线}
+		\subparagraph{Nurbs 曲线的基本概念}
+		
+		\subparagraph{Nurbs 曲线的构成要素}
+		
+		\subparagraph{Nurbs 曲线的创建}
+		
+		\subparagraph{Nurbs 曲线的精度}
+	\paragraph{2.Nurbs 曲面}
+		\subparagraph{Nurbs 曲面的构成}
+		
+		\subparagraph{Nurbs 曲面的创建方法}
+		
+	\paragraph{+Nurbs 曲面曲线的参数化}
+	
+	\paragraph{3.创建菜单组}
+		\subparagraph{球体等规则体}
+	\paragraph{4.编辑曲线菜单组}
+		\subparagraph{复制曲面曲线}
+		\subparagraph{附加曲线}
+		\subparagraph{分离曲线}
+		\subparagraph{对齐曲线}	
+		\subparagraph{开发/闭合曲线}
+		\subparagraph{移动接缝}
+		\subparagraph{切割曲线}
+		\subparagraph{曲线相交}
+		\subparagraph{曲线圆角}
+		\subparagraph{插入结}
+		\subparagraph{延伸曲线}
+		\subparagraph{重建曲线}
+		\subparagraph{添加点工具}
+		
+	\paragraph{5.曲面菜单组}	
+		\subparagraph{旋转}
+		\subparagraph{放样}
+		\subparagraph{平面}
+		\subparagraph{挤出}
+		\subparagraph{双轨成型}
+		\subparagraph{边界}
+		\subparagraph{方形}
+		\subparagraph{倒角}
+		\subparagraph{倒角+}
+		
+	\paragraph{6.编辑Nurbs 菜单组}
+		\subparagraph{复制Nurbs 面片}
+		\subparagraph{在曲线上 投影曲线}
+		\subparagraph{曲面相交}
+		\subparagraph{修剪工具/取消修剪}
+		\subparagraph{布尔}
+		\subparagraph{附件曲面}
+		\subparagraph{附件而不移动}
+		\subparagraph{分离曲面}
+		\subparagraph{对齐曲面}
+		\subparagraph{开放/闭合 曲面}
+		\subparagraph{移动接缝}
+		\subparagraph{插入等参线}
+		\subparagraph{延伸曲面}
+		\subparagraph{偏移曲面}
+		\subparagraph{反转曲面方向}
+		\subparagraph{重建曲面}
+		\subparagraph{圆化工具}
+
+\section{建模案例}
+	\subsection{头部建模}
+	http://www.fevte.com/tutorial-9952-1.html
+		\paragraph{1.建立对应的参考坐标系}
+
+\end{document} 

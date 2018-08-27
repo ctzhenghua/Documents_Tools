@@ -1,0 +1,103 @@
+\documentclass[UTF8,a4paper,12pt]{ctexbook} 
+
+ \usepackage{graphicx}%学习插入图
+ \usepackage{verbatim}%学习注释多行
+ \usepackage{booktabs}%表格
+ \usepackage{geometry}%图片
+ \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{listings}%代码
+ \usepackage{xcolor}  %颜色
+ \usepackage{enumitem}%列表格式
+ \usepackage{tcolorbox}
+ \usepackage{algorithm}  %format of the algorithm
+ \usepackage{algorithmic}%format of the algorithm
+ \usepackage{multirow}   %multirow for format of table
+ \usepackage{tabularx} 	%表格排版格式控制
+ \usepackage{array}	%表格排版格式控制
+ \usepackage{hyperref} %超链接 \url{URL}
+
+ \CTEXsetup[format+={\flushleft}]{section}
+  %%%% 下面的命令添加新字体 %%%%%
+ 
+ %%%% 下面的命令定义图表、算法、公式 %%%%
+ \newcommand{\EQ}[1]{$\textbf{EQ:}#1\ $}
+ \newcommand{\ALGORITHM}[1]{$\textbf{Algorithm:}#1\ $}
+ \newcommand{\Figure}[1]{$\textbf{Figure }#1\ $}
+ 
+ %%%% 下面命令改变图表下标题的前缀 %%%%% 如:图-1、Fig-1
+ \renewcommand{\figurename}{Fig}
+ 
+ \geometry{left=1.6cm,right=1.8cm,top=2cm,bottom=1.7cm} %设置文章宽度
+ 
+ \pagestyle{plain} 		  %设置页面布局
+
+ %代码效果定义
+ \definecolor{mygreen}{rgb}{0,0.6,0}
+ \definecolor{mygray}{rgb}{0.5,0.5,0.5}
+ \definecolor{mymauve}{rgb}{0.58,0,0.82}
+ \lstset{ %
+ 	backgroundcolor=\color{white},   % choose the background color
+ 	basicstyle=\footnotesize\ttfamily,      % size of fonts used for the code
+ 	%stringstyle=\color{codepurple},
+ 	%basicstyle=\footnotesize,
+ 	%breakatwhitespace=false,         
+ 	%breaklines=true,                 
+ 	%captionpos=b,                    
+ 	%keepspaces=true,                 
+ 	%numbers=left,                    
+ 	%numbersep=5pt,                  
+ 	%showspaces=false,                
+ 	%showstringspaces=false,
+ 	%showtabs=false,        
+ 	columns=fullflexible,
+ 	breaklines=true,                 % automatic line breaking only at whitespace
+ 	captionpos=b,                    % sets the caption-position to bottom
+ 	tabsize=4,
+ 	commentstyle=\color{mygreen},    % comment style
+ 	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+ 	keywordstyle=\color{blue},       % keyword style
+ 	stringstyle=\color{mymauve}\ttfamily,     % string literal style
+ 	frame=single,
+ 	rulesepcolor=\color{red!20!green!20!blue!20},
+ 	% identifierstyle=\color{red},
+ 	language=c++,
+ }
+ \author{\kaishu 郑华}
+ \title{\heiti Excel 学习笔记}
+ 
+\begin{document}          %正文排版开始
+ 	\maketitle
+	\tableofcontents
+	
+\chapter{时间}
+	\section{相关函数}
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{|m{2cm}|m{6cm}|m{9cm}|}	
+				\hline
+				 函数名    & 函数说明 & 语法 \\
+				
+				\hline
+				 \verb|DATEIF| 	  & 计算两个日期之间的天数(\verb|"d"|)、月数(\verb|"m"|)、年数(\verb|"y"|) 	  & \verb|DATEDIF(start_date,end_date,unit)|: \verb|DATEDIF("2001/1/1","2003/1/1","Y")|等于2,即时间段中有两个整年\\
+				
+				\hline
+				 \verb|WEEKDAY|	  & 返回某日期为星期几。默认情况下，其值为 1（星期天）到 7（星期六）之间的整数 ,
+				 \verb|Return_type|为确定返回值类型的数字，数字 1或省略则 (\verb|1~7|) 代表星期天到数星期六，数字2则(\verb|1~7|)代表星期一到星期天，数字3则(\verb|0~6|)代表 星期一到星期天。
+				  &\verb|WEEKDAY(serial_number,return_type)|: \verb|公式 "=WEEKDAY("2001/8/28"，2)"|返回2(星期二)，\verb|"=WEEKDAY("2003/02/23"，3)"|返回6(星期日) \\
+				
+				\hline
+				\verb|WEEKNUM|	  & 返回一个数字，该数字代表一年中的第几周,\verb|Return_type|
+				为一数字，确定星期计算从哪一天开始。默认值为1
+				&\verb|WEEKNUM(serial_num,return_type)|: \verb|=WEEKNUM("2016/01/01",1) -->1| \\
+				\hline
+			\end{tabular}
+			\caption{常用时间函数}
+		\end{table} 
+\chapter{画图}
+
+\chapter{表格}
+
+	    
+\end{document} 
+ 		    
